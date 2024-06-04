@@ -6,7 +6,23 @@
   background:black;
   width:100%;
   color:white;
-  padding-left:20px;
+  padding-left:10px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+
+}
+button{
+  margin:5px;
+  border:1px solid black;
+  color:black;
+  font-size: 15px;
+  background-color: white;
+}
+input{
+  margin:5px;
+  font-size: 18px;
+  border:2px solid gray;
 }
 div{
   box-sizing: border-box;
@@ -15,6 +31,14 @@ div{
   padding-left:20px;
   text-align: left;
   border-bottom:1px solid gray;
+}
+
+.modal{
+  margin-top : 10px;
+  padding:20px;
+  background: #eee;
+  text-align: left;
+
 }
 
 .App-logo {
