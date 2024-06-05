@@ -3,8 +3,8 @@ import {useState} from 'react'
 function App() {
 
   //const post = "우동" //변수
-  const [글제목,글제목변경] = useState(["남자코트 추천","대전우동 맛집","리엑트 독학"])
-  const [좋아요,변경] = useState([0,0,0])
+  const [글제목,글제목변경] = useState(["TRIPLE BLACK 240 ","TWILIGHT BLUE 270"])
+  const [좋아요,변경] = useState([0,0,0,0,0])
   let [title,setTitle]=useState(2)
   let [input,setInput] = useState("")
   const logo = "사용자 후기 게시판"
@@ -17,9 +17,6 @@ function App() {
       <h4 style={{color :'white',fontSize:'25px'}}>{logo}</h4>
       </div>
 
-      <button onClick={()=>{setTitle(2)}}>제목 변경</button>
-      <button onClick={()=>{setModal(!modal)}}>모달창</button>
-
 {         
    글제목.map(function(a, i){
       return (
@@ -31,8 +28,7 @@ function App() {
                변경(copy)  
              }}>👍</span> {좋아요[i]} 
           </h4>
-          
-          <p>6월 11일 작성</p>
+          <button>수정</button>
           <button onClick={()=>{
             let copy = [...글제목]
             copy.splice(i,1)
@@ -47,7 +43,7 @@ function App() {
     copy.unshift(input)
     글제목변경(copy)
   }}>작성하기</button>
-  
+  <button onClick={()=>{setModal(false)}}>상세정보 끄기</button>
       {
       modal === true ? <Modal title={title} color={"orange"} 글제목={글제목}></Modal> : null
       }
@@ -62,8 +58,9 @@ function Modal(props){
   return(
     <div className='modal' style={{background:props.color}}>
         <h3>{props.글제목[props.title]}</h3>
-        <p>날짜</p>
-        <p>상세내용</p>
+        <p>작성자 : </p>
+        <p>날짜 : 6월 11일</p>
+        <p>상세내용 : </p>
     </div>
   )
 }
